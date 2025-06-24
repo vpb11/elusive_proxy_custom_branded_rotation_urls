@@ -1,7 +1,10 @@
 const express = require("express");
 const axios = require("axios");
 const app = express();
+const cors = require("cors");
 const port = 80;
+
+app.use(cors({ origin: ["*"] }));
 
 app.get("/proxy-rotation/:first/:seccond/:proxy_id", async (req, res) => {
   const URL = `https://elusiveproxy.com/proxy-rotate/${req.params.first}/${req.params.seccond}/${req.params.proxy_id}`;
