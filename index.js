@@ -6,7 +6,7 @@ const port = 80;
 
 app.use(cors({ origin: ["*"] }));
 
-app.get("/proxy-rotation/:first/:seccond/:proxy_id", async (req, res) => {
+app.get("/proxy-rotate/:first/:seccond/:proxy_id", async (req, res) => {
   const URL = `https://elusiveproxy.com/proxy-rotate/${req.params.first}/${req.params.seccond}/${req.params.proxy_id}`;
   const axiosResponse = await axios.get(URL);
   const Operation = axiosResponse.data?.message ?? axiosResponse.data?.error;
